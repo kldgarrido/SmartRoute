@@ -29,15 +29,21 @@ public class MainCore {
         routeCalculatorHelper = new RouteCalculatorHelper();
     }
     
-    public void execute(String stationAName, String stationBName){
+    public boolean execute(String stationAName, String stationBName){
         Station stationA = stationMap.get(stationAName);
         Station stationB = stationMap.get(stationBName);
         
-        List<TravelResult> results = routeCalculatorHelper.calculate(stationA, stationB);
+        List<TravelResult> results1 = routeCalculatorHelper.calculate1(stationA, stationB);
+        List<TravelResult> results2= routeCalculatorHelper.calculate2(stationA, stationB);
+        
+        List<TravelResult> results = results1;
+        results.addAll(results2);
         
         results.stream().forEach(item-> {
             System.out.println(item);
         });
+        
+        return !results.isEmpty();
     }
     
 }

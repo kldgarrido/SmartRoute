@@ -42,17 +42,6 @@ public class MainCoreTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of main method, of class MainCore.
-     */
-    @org.junit.Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        MainCore.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of execute method, of class MainCore.
@@ -74,11 +63,11 @@ public class MainCoreTest {
         stationMap.put("StationNort", station01);
         stationMap.put("StationSouth", station02);
         
-        
         MainCore instance = new MainCore(stationMap);
-        instance.execute(stationAName, stationBName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean expResult = true;
+        boolean result = instance.execute(stationAName, stationBName);
+        
+        assertEquals(expResult, result);
     }
     
 }

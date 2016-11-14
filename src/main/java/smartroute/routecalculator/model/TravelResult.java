@@ -5,6 +5,8 @@
  */
 package smartroute.routecalculator.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author kld
@@ -24,5 +26,32 @@ public class TravelResult {
     public String toString() {
         return "TravelResult{" + "text=" + text + '}';
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + Objects.hashCode(this.text);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TravelResult other = (TravelResult) obj;
+        if (!Objects.equals(this.text, other.text)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
 }

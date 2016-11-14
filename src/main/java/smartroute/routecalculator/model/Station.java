@@ -5,6 +5,7 @@
  */
 package smartroute.routecalculator.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +30,7 @@ public class Station {
         this.id = id;
         this.name = name;
         this.routes = routes;
+        routes = new ArrayList<>();
     }
     
     public String getId() {
